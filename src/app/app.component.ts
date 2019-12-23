@@ -20,7 +20,11 @@ export class AppComponent {
 
   // add a new list item
   addItem(name: string) {
-    this.items.push(new Item(false, name));
+    if (name) {
+      this.items.push(new Item(false, name));
+    } else {
+      alert('You must write something!');
+    }
   };
 
   // toggle check on a list item
